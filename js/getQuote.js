@@ -1,6 +1,10 @@
 
+function inIframe () { try { return window.self !== window.top; } catch (e) { return true; } }
+
+
 $(document).ready(function(){
     //runs getQuote funtuion at start of document
+    var trigger = false;;
     getQuote();
     
 
@@ -10,7 +14,13 @@ $(document).ready(function(){
             type:'GET',
             url: 'http://quotesondesign.com/wp-json/posts?filter[orderby]=rand&filter[posts_per_page]=1',
             success: function(obj) {
-                changeQuoteHTML(obj);
+                if (trigger) {
+                    changeColor(), changeQuoteHTML(obj), $("#box").fadeTo(250,1);
+
+                } else {
+                    trigger = true;
+                    changeQuoteHTML(obj), $("#box").fadeTo(250,1);
+                }
             },
             cache: !1
         }); //.ajax
@@ -36,20 +46,22 @@ $(document).ready(function(){
     
     
     
-    
+    //listener
     $("#get-new-quote").click(function(){
-        getQuote();
-        
-        
-        //create a random 
-        var randomColor = rgb(rand(50,200),rand(50,200),rand(50,200));
-        $(".colorBG").animate({backgroundColor: randomColor}, 1000 );
-        $(".colorTEXT").animate({color: randomColor}, 1000 );
-        
+        $("#box").fadeTo(250, 0.0, getQuote());
     });
     
     
-
+    
+    function changeColor(){
+        var randomColor = rgb(rand(50,200),rand(50,200),rand(50,200));
+        
+        $(".colorBG").animate({backgroundColor: randomColor}, 500 ),
+        $(".colorTEXT").animate({color: randomColor}, 500 );
+    }
+    
+    function animateQuoteHTML(){
+    }
     
     
         //Random and rgb Functions
