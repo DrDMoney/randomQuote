@@ -1,0 +1,89 @@
+body{
+    font-family: 'Raleway', sans-serif;;
+    text-align: center;
+    color:#fff;
+}
+
+.colorBG{
+    background:#99ddff;
+}
+.colorTEXT{
+    color:#99ddff;
+}
+
+/* Adds hard margin to outside*/
+.container{
+    margin: auto 20px auto 20px;
+    min-width: 250px;
+}
+
+
+
+/* Stle for Quote info*/
+.quoteBox{
+    max-width: 500px;
+    min-width: 250px;
+    border-radius:3px;
+    background:#fff;
+    margin: 200px auto 5px auto;
+    -webkit-box-shadow: 2px 2px 5px -1px rgba(0,0,0,0.27);
+    -moz-box-shadow: 2px 2px 5px -1px rgba(0,0,0,0.27);
+    box-shadow: 2px 2px 5px -1px rgba(0,0,0,0.27);
+}
+.innerBox{
+    text-align: center;
+    padding:20px;
+    font-weight: 500;
+    font-size: 1.5em;
+}
+
+#quote, #quote>p, .fa{
+    display:inline;
+    line-height: 30px;
+}
+
+.fa-quote-left{
+    font-size:2em;
+}
+.quoteAuthor{
+    text-align: right;
+    padding-right:15px;
+    font-weight:lighter;
+    font-size: .7em;
+}
+
+/* Styles for buttons*/
+.buttons{
+    height:35px;
+    padding:10px 30px 25px 20px;
+}
+
+.button{
+    float:left;
+    display:inline-block;
+    height: 30px;
+    min-width: 40px;
+    font-size: 1.2em;
+    border-radius:3px;
+    margin-left:10px;
+    line-height: 9px;
+    color:#fff;
+
+}
+.newQuoteBtn{
+    float:right;
+}
+.newQuoteBtn>p{
+    font-size: .6em;
+    padding-left:10px;
+    padding-right:10px;
+}
+
+/* Resize footer text*/
+.createdBy{
+    font-size:.65em;
+}
+.createdBy>p>a{
+    text-decoration:none;
+    color:#fff;
+}
