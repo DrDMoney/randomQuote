@@ -1,5 +1,7 @@
 
 $(document).ready(function(){
+    getQuote();
+    
 
 
     function getQuote(){
@@ -23,28 +25,24 @@ $(document).ready(function(){
         
         //builds a twitter url
         var twitterUrl = "http://twitter.com/home?status="; // starting url
-            console.log(array.content);
-        var arrayToUrl = array.content.replace(/(<([^>]+)>)/gi, ""); // removes HTML element tags
-            console.log(arrayToUrl);
-        arrayToUrl = arrayToUrl.substring(0, 108); // chars to 108
-            console.log(arrayToUrl);
-       arrayToUrl = arrayToUrl.replace(new RegExp(" ", 'g'), "%20"); // Replaces all spaces with %20 "url sapce code"
-            console.log(arrayToUrl);
-        twitterUrl = twitterUrl + arrayToUrl;
+        var toUrl = $("#quote").text().replace(/(<([^>]+)>)/gi, ""); // removes HTML element tags
+        toUrl = toUrl.replace(/'/g, "%27");
+        toUrl = toUrl.replace(/"/g, "%22");
         
-        console.log(arrayToUrl);
+        toUrl = toUrl.substring(0, 108); // chars to 108
+        twitterUrl+=toUrl;
         
-    
+        console.log(twitterUrl);
         
+
+
         $("#twitter").attr("href", twitterUrl);
-        
     }
     
+    $("#get-new-quote").click(function(){
+        getQuote();
+    });
 
-    $("#get-new-quote").click(getQuote());
-    
-    
-    
 });
 
 
