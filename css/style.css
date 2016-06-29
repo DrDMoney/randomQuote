@@ -63,7 +63,7 @@ body{
     display:inline-block;
     height: 30px;
     min-width: 40px;
-    font-size: 1em;
+    font-size: 1.5em;
     border-radius:3px;
     margin-left:10px;
     line-height: 4px;
@@ -81,7 +81,7 @@ body{
 
 /* Resize footer text*/
 .createdBy{
-    font-size:.65em;
+    font-size:.8em;
 }
 .createdBy>p>a{
     text-decoration:none;
